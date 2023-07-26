@@ -1,39 +1,107 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.login__name {
+    position: relative;
+    bottom: 6px;
+    margin-right: 20px;
+    font-size: 40px;
+    color: whitesmoke;
+    cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
+.h100 {
+    height: calc(100vh - 103px);
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.nav-btn {
+    margin-top: 12px;
+    font-size: 20px;
+    height: 40px;
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+#shop-btn {
+    margin-right: auto;
+    color: whitesmoke;
+    font-size: 30px;
+    cursor: pointer;
+}
+.cart {
+    height: 40px;
+    margin-right: 10px;
+    position: relative;
+    top: 10px;
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.listItem {
+    cursor: pointer;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.listItem:hover {
+    background-color: rgb(42, 40, 40);
+    color: whitesmoke;
+}
+
+.listItem-selected {
+    background-color: #212529;
+    color: whitesmoke;
+}
+
+.card {
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100px;
+    text-align: center;
+}
+
+.rating {
+    font-size: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 240px;
+    height: 240px;
+}
+
+.alignment-class {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart-card {
+    border: 5px solid lightgray;
+    justify-content: center;
+}
+
+.cart-row {
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 200px;
+}
+
+.brandLayout {
+    width: calc(100vw - 200px);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modalLayout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }

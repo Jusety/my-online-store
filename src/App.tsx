@@ -1,58 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.css";
+import { Layout } from "antd";
+import Navbar from "./components/UI/Navbar/Navbar";
+import AppRouter from "./components/AppRouter";
+import { authSlicer } from "./app/reducers/auth";
+import { useAppDispatch } from "./app/hooks";
+import { IUser } from "./models/IUser";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        if (localStorage.getItem("auth")) {
+            dispatch(authSlicer.actions.setIsAuth(true));
+            dispatch(
+                authSlicer.actions.setUser(
+                    JSON.parse(localStorage.getItem("user") || "") as IUser
+                )
+            );
+        }
+    }, [dispatch]);
+
+    return (
+        <Layout>
+            <Layout.Header>
+                <Navbar />
+            </Layout.Header>
+            <Layout.Content>
+                <AppRouter />
+            </Layout.Content>
+        </Layout>
+    );
+};
 
 export default App;
