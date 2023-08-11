@@ -1,5 +1,4 @@
 import React from "react";
-import star from "../../../assets/star.png";
 import { Col } from "antd";
 import { IDevice } from "../../../models/deviceInterface/IDevice";
 
@@ -20,7 +19,7 @@ const DeviceRating: React.FC<DeviceRatingProps> = ({ localDevice }) => {
                 <div
                     className="rating"
                     style={{
-                        background: `url(${star}) no-repeat center center`,
+                        background: `url(${"/assets/star.png"}) no-repeat center center`,
                         backgroundSize: "cover",
                     }}
                 >

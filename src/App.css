@@ -13,6 +13,11 @@
     cursor: pointer;
 }
 
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
 .h100 {
     height: calc(100vh - 103px);
 }
@@ -37,10 +42,16 @@
 }
 
 .listItem {
+    margin-top: 12px;
     cursor: pointer;
     font-size: 20px;
     border: 2px solid black;
     border-radius: 10px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .listItem:hover {

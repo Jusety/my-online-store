@@ -1,7 +1,6 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { Button, Row } from "antd";
-import cart from "../../../assets/shopping-cart.png";
 import { useNavigate } from "react-router-dom";
 import { RouteNames } from "../../../routes";
 import { authSlicer } from "../../../app/reducers/auth";
@@ -28,7 +27,7 @@ const Navbar: React.FC = () => {
                     <div className="login__name">
                         <img
                             alt=""
-                            src={cart}
+                            src="/assets/shopping-cart.png"
                             className="cart"
                             onClick={() => navigate(RouteNames.BASKET_ROUTE)}
                         />

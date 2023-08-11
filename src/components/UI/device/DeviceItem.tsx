@@ -2,7 +2,6 @@ import React from "react";
 import { IDevice } from "../../../models/deviceInterface/IDevice";
 import { Col, Image } from "antd";
 import { RouteNames } from "../../../routes";
-import dev from "../../../assets/s23_ultra.jpg";
 import { generatePath, useNavigate } from "react-router-dom";
 
 interface DeviceItemProps {
@@ -24,7 +23,7 @@ const DeviceItem: React.FC<DeviceItemProps> = ({ device }) => {
                         )
                     }
                 >
-                    <Image src={dev} width={200} height={150} />
+                    <Image src={device.img} width={200} height={150} />
                     <div>{device.brand}</div>
                     <div>{device.name}</div>
                 </div>

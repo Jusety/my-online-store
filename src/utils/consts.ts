@@ -3,15 +3,13 @@ import { IDevice } from "../models/deviceInterface/IDevice";
 import { IType } from "../models/deviceInterface/IType";
 import { generateId } from "./generateId";
 
-//фотки сделать к каждому бренду и типу(через ссылку на фото), мб к сделать css для layout deviceItem в shop
-
 export const types: IType[] = [
     { id: generateId(), name: "Phone" },
     { id: generateId(), name: "Microwave" },
     { id: generateId(), name: "Laptop" },
     { id: generateId(), name: "Fridge" },
     { id: generateId(), name: "TV" },
-    { id: generateId(), name: "Screen" },
+    { id: generateId(), name: "Monitor" },
     { id: generateId(), name: "Washing machine" },
     { id: generateId(), name: "Vacuum cleaner" },
 ];
@@ -23,21 +21,38 @@ export const brands: IBrand[] = [
     { id: generateId(), name: "Sony" },
     { id: generateId(), name: "LG" },
     { id: generateId(), name: "HUAWEI" },
+    { id: generateId(), name: "Apple" },
+    { id: generateId(), name: "AOC" },
 ];
 
 export const devices: IDevice[] = [
     {
         id: generateId(),
-        name: "Galaxy S23",
+        name: "IPhone 14 pro max",
         type: "Phone",
-        brand: "Samsung",
+        brand: "Apple",
         description: [
             { id: 1, title: "Main color", def: "Black" },
-            { id: 2, title: "Published date", def: 2023 },
+            { id: 2, title: "Published date", def: 2022 },
+            { id: 3, title: "Memory", def: "256 GB" },
         ],
-        rating: 10,
-        price: 100000,
-        img: "D:/webtips/my-online-store/src/assets/s23_ultra.jpg",
+        rating: 9.6,
+        price: 120439,
+        img: "/assets/14promax.jpeg",
+    },
+    {
+        id: generateId(),
+        name: "I2790VQ 27",
+        type: "Monitor",
+        brand: "AOC",
+        description: [
+            { id: 1, title: "Main color", def: "Gray" },
+            { id: 2, title: "Published date", def: 2022 },
+            { id: 3, title: "Quality", def: "1920 X 1080" },
+        ],
+        rating: 8.2,
+        price: 17990,
+        img: "/assets/mon.png",
     },
     {
         id: generateId(),
@@ -48,35 +63,37 @@ export const devices: IDevice[] = [
             { id: 1, title: "Main color", def: "Black" },
             { id: 2, title: "Published date", def: 2023 },
         ],
-        rating: 10,
+        rating: 4,
         price: 100000,
-        img: "https://www.google.com/search?q=s23+samsung&sxsrf=APwXEdc474amh_Fx02K6m9bJW3ocFt_AQA:1684509531787&source=lnms&tbm=isch&sa=X&ved=2ahUKEwii8YyC14H_AhXKk4sKHZ2ODfkQ_AUoA3oECAEQBQ&biw=1440&bih=757&dpr=1#imgrc=NRaB8ApQd0_I-M",
+        img: "/assets/A5.jpg",
     },
     {
         id: generateId(),
-        name: "Galaxy S23",
-        type: "Phone",
+        name: "UE32T5300AUXRU",
+        type: "TV",
         brand: "Samsung",
-        description: [
-            { id: 1, title: "Main color", def: "Black" },
-            { id: 2, title: "Published date", def: 2023 },
-        ],
-        rating: 10,
-        price: 100000,
-        img: "https://www.google.com/search?q=s23+samsung&sxsrf=APwXEdc474amh_Fx02K6m9bJW3ocFt_AQA:1684509531787&source=lnms&tbm=isch&sa=X&ved=2ahUKEwii8YyC14H_AhXKk4sKHZ2ODfkQ_AUoA3oECAEQBQ&biw=1440&bih=757&dpr=1#imgrc=NRaB8ApQd0_I-M",
-    },
-    {
-        id: generateId(),
-        name: "Microwave_name",
-        type: "Microwave",
-        brand: "LG",
         description: [
             { id: 1, title: "Main color", def: "Black" },
             { id: 2, title: "Published date", def: 2021 },
+            { id: 3, title: "Quality", def: "Full HD" },
+            { id: 4, title: "Size", def: "32`" },
         ],
-        rating: 10,
-        price: 100000,
-        img: "https://www.google.com/search?q=s23+samsung&sxsrf=APwXEdc474amh_Fx02K6m9bJW3ocFt_AQA:1684509531787&source=lnms&tbm=isch&sa=X&ved=2ahUKEwii8YyC14H_AhXKk4sKHZ2ODfkQ_AUoA3oECAEQBQ&biw=1440&bih=757&dpr=1#imgrc=NRaB8ApQd0_I-M",
+        rating: 6.7,
+        price: 32459,
+        img: "/assets/tv.avif",
+    },
+    {
+        id: generateId(),
+        name: "MS-2336GIH",
+        type: "Microwave",
+        brand: "LG",
+        description: [
+            { id: 1, title: "Main color", def: " Gray" },
+            { id: 2, title: "Published date", def: 2021 },
+        ],
+        rating: 7,
+        price: 13000,
+        img: "/assets/micro.png",
     },
     {
         id: generateId(),
@@ -89,6 +106,33 @@ export const devices: IDevice[] = [
         ],
         rating: 10,
         price: 100000,
-        img: "https://www.google.com/search?q=s23+samsung&sxsrf=APwXEdc474amh_Fx02K6m9bJW3ocFt_AQA:1684509531787&source=lnms&tbm=isch&sa=X&ved=2ahUKEwii8YyC14H_AhXKk4sKHZ2ODfkQ_AUoA3oECAEQBQ&biw=1440&bih=757&dpr=1#imgrc=NRaB8ApQd0_I-M",
+        img: "/assets/s23_ultra.jpg",
+    },
+    {
+        id: generateId(),
+        name: "RF-TD210NMA/W",
+        type: "Fridge",
+        brand: "DEXP",
+        description: [
+            { id: 1, title: "Main color", def: "White" },
+            { id: 2, title: "Published date", def: 2018 },
+        ],
+        rating: 5,
+        price: 2000,
+        img: "/assets/fridge.jpg",
+    },
+    {
+        id: generateId(),
+        name: "XCLEA H30",
+        type: "Vacuum cleaner",
+        brand: "HUAWEI",
+        description: [
+            { id: 1, title: "Main color", def: "White" },
+            { id: 2, title: "Published date", def: 2022 },
+            { id: 3, title: "Battery", def: "5200mAh" },
+        ],
+        rating: 9,
+        price: 80320,
+        img: "/assets/vacc.jpg",
     },
 ];

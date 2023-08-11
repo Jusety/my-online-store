@@ -25,11 +25,16 @@ const DeviceCard: React.FC<DeviceCardProps> = ({ localDevice }) => {
     };
 
     const removeFromCart = () => {
-        dispatch(
-            deviceSlicer.actions.setCartDevice(
-                device.filter((d) => d.id !== Number(id))
-            )
-        );
+        let localCart = [...cartDevice];
+
+        for (let i = 0; i < localCart.length; i++) {
+            if (localCart[i].id === Number(id)) {
+                localCart.splice(i, 1);
+                break;
+            }
+        }
+
+        dispatch(deviceSlicer.actions.setCartDevice(localCart));
     };
 
     return (
@@ -42,18 +47,21 @@ const DeviceCard: React.FC<DeviceCardProps> = ({ localDevice }) => {
                     height: 250,
                 }}
             >
-                <h3 style={{ display: "flex", justifyContent: "center" }}>
-                    {localDevice?.price}
-                </h3>
-                <div style={{ display: "flex", justifyContent: "center" }}>
+                <h3 className="justify-center">{localDevice?.price}</h3>
+                <div className="justify-center" style={{ marginTop: 20 }}>
                     <Button onClick={addToCart} style={{ marginRight: 20 }}>
                         Add to cart
                     </Button>
-                    {cartDevice.length !== 0 && (
+                    {cartDevice.find((d) => d.id === Number(id)) !==
+                        undefined && (
                         <Button onClick={removeFromCart}>
                             Remove from cart
                         </Button>
                     )}
+                </div>
+                <div style={{ marginTop: 30 }} className="justify-center">
+                    In Cart:
+                    {cartDevice.filter((d) => d.id === Number(id)).length}
                 </div>
             </Card>
         </Col>
