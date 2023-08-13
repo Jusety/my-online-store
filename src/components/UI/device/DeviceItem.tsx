@@ -23,9 +23,11 @@ const DeviceItem: React.FC<DeviceItemProps> = ({ device }) => {
                         )
                     }
                 >
-                    <Image src={device.img} width={200} height={150} />
-                    <div>{device.brand}</div>
-                    <div>{device.name}</div>
+                    <Image src={device.img} width="13vw" height="10vw" />
+                    <div style={{ marginTop: "1.5vh" }} className="mg">
+                        <div>{device.brand}</div>
+                        <div>{device.name}</div>
+                    </div>
                 </div>
             </div>
         </Col>

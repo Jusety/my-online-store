@@ -94,10 +94,10 @@
 }
 
 .cart-row {
+    margin-top: 50px;
     display: grid;
-    margin-top: 20px;
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 200px;
+    row-gap: 300px;
 }
 
 .brandLayout {
@@ -115,4 +115,10 @@
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+
+@media screen and (min-width: 1500px) {
+    .mg {
+        margin-left: 3vw;
+    }
 }

@@ -15,9 +15,9 @@ const DeviceList: React.FC<DeviceListProps> = () => {
             style={{
                 display: "flex",
                 flexWrap: "wrap",
-                width: "70vw",
+                width: "92vw",
                 height: "70vh",
-                rowGap: 0,
+                rowGap: "10vh",
             }}
             className="cart-row"
         >
